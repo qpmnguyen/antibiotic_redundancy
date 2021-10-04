@@ -1,0 +1,9 @@
+name: antibiotic_red
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - snakemake
+  - nextflow
+prefix: /dartfs-hpc/rc/home/k/f00345k/.conda/envs/antibiotic_red
