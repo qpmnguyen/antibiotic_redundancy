@@ -1,2 +1,5 @@
 raw/
 databases/
+work/
+.nextflow/
+.nextflow.log*
