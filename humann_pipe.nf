@@ -1,14 +1,17 @@
 #!/usr/bin/env nextflow 
 
-params.dir = "data/combined/*.fastq.gz"
-params.outputdir = "output/humann_output/"
-seq_files = file(params.dir)
+seqFiles = Channel.fromFilePairs("raw_data/paired_end/*.{1,2}.fastq.gz")
 
-process run_humann {
+process concat_samples {
+    echo true 
+    publishDir 'raw_data/combined'
     input: 
-    file query_file from seq_files
+    set sampleID, file(reads) from seqFiles
+    output:
+    set sampleID, file("${sampleID}_concat.fastq.gz") into concatFiles
     """
-    humann --input ${query_file} --output $params.outputdir
-    """
+    cat $reads > ${sampleID}_concat.fastq.gz
+    """   
 }
+
 

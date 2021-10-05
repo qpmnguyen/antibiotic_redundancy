@@ -4,6 +4,10 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - snakemake
   - nextflow
-prefix: /dartfs-hpc/rc/home/k/f00345k/.conda/envs/antibiotic_red
+  - pip:
+    - beautifulsoup4==4.10.0
+    - bs4==0.0.1
+    - humann==3.0.0
+    - kneaddata==0.10.0
+    - soupsieve==2.2.1

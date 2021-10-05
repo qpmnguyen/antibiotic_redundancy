@@ -3,3 +3,4 @@ databases/
 work/
 .nextflow/
 .nextflow.log*
+.nextflow*
